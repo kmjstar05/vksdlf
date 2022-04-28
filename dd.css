@@ -1,0 +1,179 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 래퍼 (가운데 정렬용) */
+.wrap {
+    display: flex; /* 정렬을 위한 flex 디스플레이 */
+    flex-direction: column; /* 세로로 하위 요소를 배치하게 설정 */
+    align-items: center; /* 가로 정렬 = 중앙 정렬 */
+    width: 900px;
+    height: 1000px
+}
+
+/* 헤더 */
+.header {
+    display: flex; /* 정렬을 위한 flex 디스플레이 */
+    flex-direction: column; /* 세로로 하위 요소를 배치하게 설정 */
+    align-items: center; /* 가로 정렬 = 중앙 정렬 */
+    justify-content: center; /* 세로 정렬 = 중앙 정렬 */
+    width: 900px;
+    height: 100px;
+    background-color: white; /* 헤더 색상 설정 */
+}
+/* 로고 */
+.logo {
+    width: 200px;
+    height: 50px;
+}
+/* 메뉴 */
+.menu {
+    display: flex; /* 정렬을 위한 flex 디스플레이, float left 없이도 하위 요소를 한 줄로 정렬해줌 */
+    width: 600px;
+    height: 35px;
+}
+/* 메뉴 바로 밑의 항목 (큰 메뉴탭) */
+.menu > li {
+    background-color: ghostwhite;
+}
+/* 서브 메뉴 밑의 항목 (서브 메뉴탭) */
+.submenu > li {
+    background-color: whitesmoke;
+}
+/* 서브메뉴 */
+.submenu {
+    position: absolute; /* 이걸로 바꿔서 이미지 슬라이드 위에도 보일 수 있게 할거임 */
+    z-index: 1; /* z인덱스를 높이면 하나씩 앞으로 가져올 수 있음 */
+}
+
+/* 모든 메뉴 항목에 적용되는 사항 */
+.menu li {
+    width: 120px;
+    height: 35px;
+    font-size: 17px; /* 폰트 크기 17px */
+    text-align: center; /* 텍스트 가로 정렬 */
+    line-height: 35px; /* 텍스트 세로 정렬 */
+}
+
+/* 이미지 슬라이드 */
+.imageslide {
+    width: 800px;
+    height: 300px;
+    border: 1px dotted lightblue; /* 점선 */
+    margin-top: 50px; /* 위에 여백 50px 남기기 */
+}
+/* 이미지 슬라이드의 틀 */
+.imageslide ul {
+    position: relative; /* 이거를 부모 요소에 넣어야 하위 요소가 겹쳐짐 */
+    width: 800px;
+    height: 300px;
+}
+/* 이미지 슬라이드 요소 */
+.imageslide li {
+    position: absolute; /* 이거 넣어야 다른 요소랑 겹쳐짐 */
+    width: 800px;
+    height: 300px;
+    overflow: hidden; /* 튀어나오는 이미지 잘라버림 */
+}
+/* 이미지 슬라이드의 A 태그 */
+.imageslide a {
+    display: flex; /* 정렬용 디스플레이 */
+    justify-content: center; /* 가로 정렬 중앙 */
+    align-items: center; /* 세로 정렬 중앙 */
+    position: relative; /* 이미지랑 중간에 떠있는 글자를 겹치게 할거임 */
+    width: 800px;
+    height: 300px;
+}
+/* 이미지 슬라이드에 떠있는 글자 */
+.showtext {
+    width: 500px;
+    height: 40px;
+    font-size: 18px; /* 글씨체 사이즈 18px */
+    color: white; /* 텍스트 색상 흰색 */
+    text-align: center; /* 텍스트 가로 정렬 중앙 */
+    line-height: 40px; /* 텍스트 세로 정렬 중앙 */
+    background-color: rgba(0, 0, 0, 0.5); /* 배경색 반투명한 검은색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
+/* 이달의 상품 */
+.contents {
+    display: flex; /* 정렬용 디스플레이 */
+    flex-direction: column; /* 하위요소를 세로로 배치 */
+    width: 600px;
+    height: 300px;
+}
+/* 상품 가로줄 */
+.contents_row {
+    display: flex; /* 정렬용 디스플레이 */
+    justify-content: space-between; /* 하위요소들이 서로 거리를 두게 정렬 */
+    width: 600px;
+    height: 125px;
+    margin-top: 25px; /* 위 여백 25px */
+    margin-bottom: 25px; /* 아래 여백 25px */
+}
+/* 상품 */
+.item {
+    display: flex; /* 정렬용 디스플레이 */
+    flex-direction: column; /* 하위요소를 세로로 배치 */
+    align-items: center; /* 가로 정렬 가운데 */
+    width: 125px;
+    height: 125px;
+}
+/* 상품 이미지 틀 */
+.item_frame {
+    display: flex; /* 정렬용 디스플레이 */
+    justify-content: center; /* 가로 정렬 중앙 */
+    align-items: center; /* 세로 정렬 중앙 */
+    width: 105px;
+    height: 105px;
+    margin: 10px; /* 여백 좌우상하 모두 10px씩 줘서 바깥이랑 거리를 둠 */
+    border: 1px solid lightgray; /* 실선 바깥선 */
+}
+/* 상품 이미지 설명 */
+.item_name {
+    width: 125px;
+    height: 20px;
+    text-align: center; /* 텍스트 가로정렬 중앙 */
+    line-height: 20px; /* 텍스트 세로정렬 중앙 */
+}
+/* 상품에 마우스 가져다 댔을때 */
+.item:hover {
+    font-weight: bold; /* 글씨체 두껍게 바꿈 */
+}
+
+/* 푸터 */
+.footer {
+    display: flex;
+    justify-content: space-between; /* 요소들이 서로 떨어지게 정렬 */
+    align-items: center; /* 세로 정렬 중앙 */
+    width: 900px;
+    height: 100px;
+    margin-top: 100px; /* 위에 100px 공간 여백 */
+    background-color: lightgray;
+}
+/* 푸터 왼쪽 */
+.footer_left {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    margin-left: 50px; /* 왼쪽으로 50px 떨어짐 */
+}
+
+/* 푸터 안의 모든 글씨 */
+.footer span {
+    color: white; /* 글씨체 색깔 흰색 */
+}
